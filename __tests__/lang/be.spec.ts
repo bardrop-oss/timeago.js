@@ -57,6 +57,15 @@ describe('be', () => {
 
     vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 10);
     expect(format(date, 'be')).toEqual('10 гадоў таму');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 111);
+    expect(format(date, 'be')).toEqual('111 гадоў таму');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 112);
+    expect(format(date, 'be')).toEqual('112 гадоў таму');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 121);
+    expect(format(date, 'be')).toEqual('121 год таму');
   });
   test('time in', () => {
     vi.setSystemTime(-9 * 1000);

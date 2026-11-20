@@ -57,6 +57,15 @@ describe('uk', () => {
 
     vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 10);
     expect(format(date, 'uk')).toEqual('10 років тому');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 111);
+    expect(format(date, 'uk')).toEqual('111 років тому');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 112);
+    expect(format(date, 'uk')).toEqual('112 років тому');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 121);
+    expect(format(date, 'uk')).toEqual('121 рік тому');
   });
   test('time in', () => {
     vi.setSystemTime(-9 * 1000);

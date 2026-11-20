@@ -69,6 +69,15 @@ describe('ru', () => {
 
     vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 10);
     expect(format(date, 'ru')).toEqual('10 лет назад');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 111);
+    expect(format(date, 'ru')).toEqual('111 лет назад');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 112);
+    expect(format(date, 'ru')).toEqual('112 лет назад');
+
+    vi.setSystemTime(1000 * 60 * 60 * 24 * 366 * 121);
+    expect(format(date, 'ru')).toEqual('121 год назад');
   });
   test('time in', () => {
     vi.setSystemTime(-9 * 1000);

@@ -4,9 +4,9 @@ function formatNum(f1: string, f: string, s: string, t: string, n: number): stri
 
   if (n === 1) {
     str = f1;
-  } else if (n10 === 1 && n > 20) {
+  } else if (n10 === 1 && n % 100 !== 11) {
     str = f;
-  } else if (n10 > 1 && n10 < 5 && (n > 20 || n < 10)) {
+  } else if (n10 > 1 && n10 < 5 && (n % 100 > 20 || n % 100 < 10)) {
     str = s;
   }
   return str;
